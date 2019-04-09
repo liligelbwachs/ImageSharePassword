@@ -1,0 +1,27 @@
+﻿@using ImageSharePassword.Data
+@model IEnumerable<Image>
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+
+        <th>File Name</th>
+        <th>Views</th>
+        <th>Image</th>
+
+    </tr>
+    @foreach (Image i in Model)
+    {
+        <tr>
+            <td>@i.FileName</td>
+            <td>@i.Views</td>
+            <td>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 well">
+                        <img src="/UploadedImages/@i.FileName" style="width: 800px;" />
+                        <br />
+                    </div>
+                </div>
+            </td>
+        </tr>
+    }
+    
+</table>

@@ -1,0 +1,15 @@
+﻿@using ImageSharePassword.Web.Controllers
+@model int
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 well">
+        <form method="post" action="/image/upload" enctype="multipart/form-data">
+            <input type="file" name="imageFile" />
+            <br />
+            <input type="text" class="form-control" name="password" placeholder="Custom Password" />
+            <br />
+            <input type="hidden" class="form-control" name="UserId" value="@Model"/>
+            <br />
+            <button class="btn btn-primary">Upload</button>
+        </form>
+    </div>
+</div>

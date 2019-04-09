@@ -1,0 +1,18 @@
+﻿@model ImageSharePassword.Web.Models.HomePageViewModel
+
+<h1>Hello, welcome to my website!</h1>
+<h3><a href="/account/signup">Sign up for a new account</a></h3>
+<h3><a href="/account/login">Login to your account</a></h3>
+@*<h3><a href="/home/addpic">Go to the secret page</a></h3>*@
+
+
+@if (Model.IsAuthenticated)
+{
+    <h3><a href="/home/addpic?id=@Model.UserId">Upload Image</a></h3>
+    <h3><a href="/image/myaccount?id=@Model.UserId">My Account</a></h3>
+    <h2>Welcome @Model.Name</h2>
+}
+else
+{
+    <h2>Welcome Guest</h2>
+}

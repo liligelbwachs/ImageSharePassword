@@ -1,0 +1,31 @@
+﻿<div class="row">
+    <div class="col-md-6 col-md-offset-3 well">
+        <h3>Sign up to our website</h3>
+        <form method="post" action="/account/signup">
+            <input type="text" class="form-control" placeholder="Name" name="name" />
+            <br />
+            <input type="text" class="form-control" placeholder="Email" name="email" />
+            <br />
+            <input id="foo" type="password" class="form-control" placeholder="Password" name="password" />
+            <br />
+            <button class="btn btn-primary">Sign up</button>
+        </form>
+    </div>
+</div>
+@section scripts {
+    <script>$(() => {
+            $("#foo").on('keyup', function() {
+                $("#output").text($("#foo").val());
+            });
+
+            $("#change").on('click', function () {
+                let attr = $("#foo").attr('type');
+                if (attr === 'text') {
+                    attr = 'password';
+                } else {
+                    attr = 'text';
+                }
+                $("#foo").attr('type', attr);
+            });
+        })</script>
+}
